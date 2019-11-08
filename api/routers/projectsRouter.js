@@ -13,9 +13,9 @@ router.get("/", (req, res) => {
 });
 
 //add project
-router.post("/api/projects/", (req, res) => {
-  Projects.insert(req.body)
-    .then(newProject => res.status(201).json(project))
+router.post("/", (req, res) => {
+  Projects.add(req.body)
+    .then(newProject => res.status(201).json(newProject))
     .catch(err => {
       console.log(err);
       res.status(500).json({ message: "Internal error adding new project" });
