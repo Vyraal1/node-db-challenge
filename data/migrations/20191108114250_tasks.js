@@ -8,10 +8,7 @@ exports.up = function(knex) {
       .references("projects.id")
       .onUpdate("cascade")
       .onDelete("cascade");
-    tbl
-      .boolean("completed")
-      .defaultTo(false)
-      .notNullable();
+    tbl.integer("completed").defaultTo(0);
 
     tbl.text("description");
     tbl.text("notes");

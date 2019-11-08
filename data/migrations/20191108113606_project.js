@@ -3,7 +3,7 @@ exports.up = function(knex) {
     tbl.increments();
     tbl.varchar("name", 255).notNullable;
     tbl.text("description");
-    tbl.boolean("completed").defaultTo(false);
+    tbl.integer("completed").defaultTo(0);
   });
 };
 
