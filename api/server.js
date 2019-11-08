@@ -14,7 +14,7 @@ server.get("/", (req, res) => {
 server.use(express.json()).use(morgan("combined"));
 
 server.use("/api/projects", projectsRouter);
-// server.use("/api/tasks", tasksRouter);
-// server.use("/api/resources", resourcesRouter);
+server.use("/api/tasks", tasksRouter);
+server.use("/api/resources", resourcesRouter);
 
 module.exports = server;
