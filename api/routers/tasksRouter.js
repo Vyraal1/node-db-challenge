@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Tasks = require("../helpers/tasksModel");
 
 //if you wanted to get all tasks for some weird reason
-router.get("/api/tasks/", (req, res) => {
+router.get("/", (req, res) => {
   Tasks.find()
     .then(tasks => {
       res.status(200).json(tasks);
